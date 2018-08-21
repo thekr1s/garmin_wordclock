@@ -41,8 +41,7 @@ class WatchFaceView extends Ui.WatchFace {
         var timeFormat = "$1$:$2$";
         var clockTime = Sys.getClockTime();
         var hours = clockTime.hour;
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
-        dc.clear();
+
         if (!Sys.getDeviceSettings().is24Hour) {
             if (hours > 12) {
                 hours = hours - 12;
