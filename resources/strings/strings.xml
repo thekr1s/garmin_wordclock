@@ -1,0 +1,17 @@
+<strings>
+
+    <string id="AppName">Woordklok</string>
+
+    <string id="ForegroundColorTitle">Foreground Color</string>
+    <string id="FontTitle">Font</string>
+
+    <string id="ColorWhite">White</string>
+    <string id="ColorBlue">Blue</string>
+    <string id="ColorGreen">Green</string>
+    <string id="ColorRed">Red</string>
+    
+    <string id="FontStencil">Stencil</string>
+    <string id="FontArialBlack">Arial Black</string>
+    <string id="FontStandard">Standard</string>
+
+</strings>

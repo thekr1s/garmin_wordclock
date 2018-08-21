@@ -1,0 +1,4 @@
+<properties>
+    <property id="ForegroundColor" type="number">0xFF0000</property>
+    <property id="Font" type="number">0</property>
+</properties>
