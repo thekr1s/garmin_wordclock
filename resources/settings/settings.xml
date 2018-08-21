@@ -37,7 +37,6 @@
         <settingConfig type="list">
             <listEntry value="0">@Strings.FontStencil</listEntry>
             <listEntry value="1">@Strings.FontArialBlack</listEntry>
-            <listEntry value="2">@Strings.FontStandard</listEntry>
         </settingConfig>
     </setting>
 
