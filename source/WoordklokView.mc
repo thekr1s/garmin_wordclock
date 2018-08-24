@@ -10,7 +10,7 @@ class WatchFaceView extends Ui.WatchFace {
 	
     function initialize() { 
         WatchFace.initialize();
-        letterplate = new Letterplate();
+        letterplate = new LetterplateEN();
         letterplate.applySettings();
     }
 

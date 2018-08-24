@@ -1,22 +1,22 @@
 using Toybox.System as Sys;
 
 
-class Letterplate {
+class LetterplateEN {
 	const width = 11;
 	const height = 11;
 	const marginPixels = 20;
 	const letters = [
-		"HETLISEBYNA",
-		"NUSKWARTIEN",
-		"VIJFXRVOORN",
-		"OVERQZHALFD",
-		"ZESTWAALFSE",
-		"DRIEVIEREEN",
-		"TWEEEWACHTR",
-		"ZEVENEGENBM",
-		"TIENELFVIJF",
-		"CUURLBYPRMW",
-		"ALGEWEESTKP"
+		"SITLISEHASN",
+		"ALMOSTBEENO",
+		"HALFQUARTER",
+		"ITWENTYFIVE",
+		"TENTPASTOSE",
+		"STWONELEVEN",
+		"THREEIGHTEN",
+		"ISEVENINEXT",
+		"FOURFIVESIX",
+		"YTWELVEPBYZ",
+		"AGOCLOCKRMW"
 		];
 		
 	const NAME_IDX = 0;
@@ -24,71 +24,58 @@ class Letterplate {
 	const COL_IDX = 2;
 	const WIDTH_IDX = 3;
 	const klockWords_11x11 = [  
-		["het",  10, 0, 3],
+		["it",  10, 1, 2],
 		["is",  10, 4, 2],
-		["vijf_min",  8, 0, 4],
-		["tien_min",  9, 7, 4],
-		["kwart",  9, 3, 5],
-		["half",  7, 6, 4],
-		["voor",  8, 6, 4],
-		["over",  7, 0, 4],
-
-
-		["een",  5, 8, 3],
-		["twee",  4, 0, 4],
-		["drie",  5, 0, 4],
-		["vier",  5, 4, 4],
-		["vijf",  2, 7, 4],
-		["zes",  6, 0, 3],
-		["zeven",  3, 0, 5],
-		["acht",  4, 6, 4],
-		["negen",  3, 4, 5],
-		["tien",  2, 0, 4],
-		["elf",  2, 4, 3],
-		["twaalf",  6, 3, 6],	
+		["has",  10, 7, 3],
+		["been",  9, 6, 4],
+		["almost",  9, 0, 6],
+		["five_min",  7, 7, 4],
+		["ten_min",  6, 0, 3],
+		["a",  8, 1, 1],
+		["quarter",  8, 4, 6],
+		["twenty",  7, 1, 6],
+		["half",  8, 0, 4],
+		["to",  6, 7, 2],
+		["past",  6, 4, 4],
 		
-		["uur",  1, 1, 3],	
-
-		["bijna",  10, 7, 4],	
-		["nu",  9, 0, 2],	
-		["geweest",  0, 2, 7],	
 
 
-		["wacht",  4, 5, 5],
-		["even",  3, 1, 4],
-
-		["by",  1, 5, 2],
-		["rmw",  1, 8, 3],
+		["one",  5, 3, 3],
+		["two",  5, 1, 4],
+		["three",  4, 0, 5],
+		["four",  2, 0, 4],
+		["five",  2, 4, 4],
+		["six",  2, 8, 3],
+		["seven",  3, 1, 5],
+		["eight",  4, 4, 5],
+		["nine",  3, 5, 4],
+		["ten",  4, 8, 3],
+		["eleven",  5, 5, 6],
+		["twelve",  1, 1, 6],	
 		
-		["he",  10, 0, 2],
-		["lise",  10, 3, 4],
-		["en",  9, 9, 2],
-		["ha",  7, 3, 2],
-		["evi",  5, 3, 3],
+		["oclock",  0, 2, 6],	
 
-
-		["am",  0, 0, 1],
-		["pm",  0, 10, 1],  
-
+		["by",  1, 8, 2],
+		["rmw",  0, 8, 3],
 		
 		["",0,0,0]
 	];		
 	const hourNames = [
-		"twaalf",
-		"een",
-		"twee",
-		"drie",
-		"vier",
-		"vijf",
-		"zes",
-		"zeven",
-		"acht",
-		"negen",
-		"tien",
-		"elf",
-		"twaalf"
+		"twelve",
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"zix",
+		"seven",
+		"eight",
+		"nine",
+		"ten",
+		"eleven",
+		"twelve"
 	];
-	var highlightedWords = [0, 1, 2, 6, 9, 23, -1];
+	var highlightedWords = [0, 1, 2, 6, 9, 10, -1];
     var fgColor = null;
     var iaColor = null;
     var bgColor = null;
@@ -162,21 +149,22 @@ class Letterplate {
         var hours = clockTime.hour;
         var minutes = clockTime.min;
 	
-		selectWord("het");
-		selectWord("is");
+		selectWord("it");
 		
 		// Round the minutes to a multiple og five
 		var t = minutes % 5;
 		if (t <= 2) {
 			minutes -= t;
 			if (t == 0) {
-				selectWord("nu");
+				selectWord("is");
 			} else {
-				selectWord("geweest");
+				selectWord("has");
+				selectWord("been");
 			}
 		} else {
 			minutes += 5 - t;
-			selectWord("bijna");
+			selectWord("is");
+			selectWord("almost");
 			if (minutes == 60){
 				minutes = 0;
 				hours += 1;
@@ -185,7 +173,7 @@ class Letterplate {
 		}
 	
 		// Display the current hour up to quarter past... After that show the next hour
-		if (minutes > 15) {
+		if (minutes > 30) {
 			hours += 1;
 		}
 	
@@ -194,21 +182,22 @@ class Letterplate {
 	
 		switch (minutes) {
 		case 0:
-			selectWord("uur");
+			selectWord("oclock");
 			break;
 	
 		case 30:
-			selectWord("half");
+			selectWord("half"); 
 			break;
 	
 		case 15:
 		case 45:
-			selectWord("kwart");
+			selectWord("a");
+			selectWord("quarter");
 			break;
 	
 		case 25:
 		case 35:
-			selectWord("half");
+			selectWord("twenty");
 		case 5:
 		case 55:
 			selectWord("vijf_min");
@@ -216,20 +205,19 @@ class Letterplate {
 			
 		case 20:
 		case 40: 
-			selectWord("half");
+			selectWord("twenty");
+			break;
+			
 		case 10:
 		case 50:
-			selectWord("tien_min");
+			selectWord("ten_min");
 			break;
 		}
 		
-		if ((minutes > 0 && minutes <= 15) ||
-			(minutes > 30 && minutes <= 40)){
-			selectWord("over");
-		} 
-		if ((minutes > 15 && minutes < 30) ||
-			(minutes >= 45 && minutes <= 55)){
-			selectWord("voor");
+		if (minutes > 0 && minutes <= 30){
+			selectWord("past");
+		} else if (minutes > 30 ){
+			selectWord("to");
 		}
 	}
 		
