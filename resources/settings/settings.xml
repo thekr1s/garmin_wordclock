@@ -1,5 +1,11 @@
 <settings>
 
+    <setting propertyKey="@Properties.Language" title="@Strings.LanguageTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.LangDutch</listEntry>
+            <listEntry value="1">@Strings.LangEnglish</listEntry>
+        </settingConfig>
+    </setting>
     <setting propertyKey="@Properties.HighlightColor" title="@Strings.HighlightColorTitle">
         <settingConfig type="list">
             <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>
@@ -38,6 +44,10 @@
             <listEntry value="0">@Strings.FontStencil</listEntry>
             <listEntry value="1">@Strings.FontArialBlack</listEntry>
         </settingConfig>
+    </setting>
+
+    <setting propertyKey="DemonstrationMode" title="@Strings.DemonstrationModeTitle">
+        <settingConfig type="boolean"/>
     </setting>
 
 </settings>

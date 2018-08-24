@@ -10,8 +10,8 @@ class WatchFaceView extends Ui.WatchFace {
 	
     function initialize() { 
         WatchFace.initialize();
-        letterplate = new LetterplateEN();
-        letterplate.applySettings();
+        settingsChanged();
+        
     }
 
     // Load your resources here
@@ -35,32 +35,33 @@ class WatchFaceView extends Ui.WatchFace {
     
     }
 
+	var hours = 0;
+	var minutes = 0;
+	var demonstrationMode = false;
+
     // Update the view
     function onUpdate(dc) {
         // Get the current time and format it correctly
         var timeFormat = "$1$:$2$";
         var clockTime = Sys.getClockTime();
-        var hours = clockTime.hour;
-
-        if (!Sys.getDeviceSettings().is24Hour) {
-            if (hours > 12) {
-                hours = hours - 12;
-            }
+        
+        if (demonstrationMode) {
+//	        Sys.println("demonstrationMode");
+			if (hours < 24) { hours += 1;}
+			else {minutes += 1;}
+			
+			if (minutes == 60) {
+				hours = 0;
+				minutes = 0;
+			}
         } else {
-            if (App.getApp().getProperty("UseMilitaryFormat")) {
-                timeFormat = "$1$$2$";
-                hours = hours.format("%02d");
-            }
-        }
-        var timeString = Lang.format(timeFormat, [hours, clockTime.min.format("%02d")]);
-
-        // Update the view
-//        var view = View.findDrawableById("TimeLabel");
-//        view.setColor(App.getApp().getProperty("ForegroundColor"));
-//        view.setText(timeString + "U");
-		
+//	        Sys.println("no demonstrationMode");
+	        hours = clockTime.hour;
+	        minutes = clockTime.min;
+		}
+				
         // Call the parent onUpdate function to redraw the layout
-        letterplate.drawTime(dc);
+        letterplate.drawTime(dc, hours, minutes);
 //        View.onUpdate(dc);
     }
 
@@ -79,6 +80,21 @@ class WatchFaceView extends Ui.WatchFace {
     }
 
 	function settingsChanged() {
+		var language = Application.getApp().getProperty("Language");
+		switch (language) {
+		case 0:
+			letterplate = new LetterplateNL();
+			break;
+		case 1:
+			letterplate = new LetterplateEN();
+			break;
+		default:
+			break;
+		}
+		demonstrationMode = Application.getApp().getProperty("DemonstrationMode");
+		hours = 0;
+		minutes = 0;
+		
 		letterplate.applySettings();
 	}
 }

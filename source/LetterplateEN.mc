@@ -32,7 +32,7 @@ class LetterplateEN {
 		["five_min",  7, 7, 4],
 		["ten_min",  6, 0, 3],
 		["a",  8, 1, 1],
-		["quarter",  8, 4, 6],
+		["quarter",  8, 4, 7],
 		["twenty",  7, 1, 6],
 		["half",  8, 0, 4],
 		["to",  6, 7, 2],
@@ -41,7 +41,7 @@ class LetterplateEN {
 
 
 		["one",  5, 3, 3],
-		["two",  5, 1, 4],
+		["two",  5, 1, 3],
 		["three",  4, 0, 5],
 		["four",  2, 0, 4],
 		["five",  2, 4, 4],
@@ -67,7 +67,7 @@ class LetterplateEN {
 		"three",
 		"four",
 		"five",
-		"zix",
+		"six",
 		"seven",
 		"eight",
 		"nine",
@@ -86,7 +86,7 @@ class LetterplateEN {
     	if (fontSelection == null) {
     		fontSelection = 0;
     	}
-    	Sys.println(fontSelection);
+    	
     	switch (fontSelection) {
     	case 1:
     		font = WatchUi.loadResource(Rez.Fonts.arialBlackFont);
@@ -144,10 +144,8 @@ class LetterplateEN {
 		} 
 	}
 	
-	function selectCurrentTimeWords() {
+	function selectTimeWords(hours, minutes) {
 	    var clockTime = Sys.getClockTime();
-        var hours = clockTime.hour;
-        var minutes = clockTime.min;
 	
 		selectWord("it");
 		
@@ -200,7 +198,7 @@ class LetterplateEN {
 			selectWord("twenty");
 		case 5:
 		case 55:
-			selectWord("vijf_min");
+			selectWord("five_min");
 			break;
 			
 		case 20:
@@ -222,13 +220,13 @@ class LetterplateEN {
 	}
 		
 	
-	function drawTime(dc) {
+	function drawTime(dc, hours, minutes) {
 		var charSpaceX = (dc.getWidth() - 2 * marginPixels) / 11;
 		var charSpaceY = (dc.getHeight() - 2 * marginPixels) / 11;
 		var posY = marginPixels + charSpaceY / 2;
 
 		clearSelectedWords();
-		selectCurrentTimeWords();
+		selectTimeWords(hours, minutes);
         dc.setColor(bgColor, bgColor);
         dc.clear();
 		

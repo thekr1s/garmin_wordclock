@@ -1,6 +1,9 @@
 <properties>
+    <property id="Language" type="number">1</property>
     <property id="HighlightColor" type="number">0xFF0000</property>
     <property id="InactiveColor" type="number">0x555555</property>
     <property id="BackgroundColor" type="number">0x000000</property>
     <property id="Font" type="number">0</property>
+    <property id="DemonstrationMode" type="boolean">false</property>
+    
 </properties>

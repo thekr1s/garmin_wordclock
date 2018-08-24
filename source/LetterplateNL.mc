@@ -99,7 +99,7 @@ class LetterplateNL {
     	if (fontSelection == null) {
     		fontSelection = 0;
     	}
-    	Sys.println(fontSelection);
+//    	Sys.println(fontSelection);
     	switch (fontSelection) {
     	case 1:
     		font = WatchUi.loadResource(Rez.Fonts.arialBlackFont);
@@ -157,10 +157,8 @@ class LetterplateNL {
 		} 
 	}
 	
-	function selectCurrentTimeWords() {
+	function selectCurrentTimeWords(hours, minutes) {
 	    var clockTime = Sys.getClockTime();
-        var hours = clockTime.hour;
-        var minutes = clockTime.min;
 	
 		selectWord("het");
 		selectWord("is");
@@ -234,13 +232,13 @@ class LetterplateNL {
 	}
 		
 	
-	function drawTime(dc) {
+	function drawTime(dc, hours, minutes) {
 		var charSpaceX = (dc.getWidth() - 2 * marginPixels) / 11;
 		var charSpaceY = (dc.getHeight() - 2 * marginPixels) / 11;
 		var posY = marginPixels + charSpaceY / 2;
 
 		clearSelectedWords();
-		selectCurrentTimeWords();
+		selectCurrentTimeWords(hours, minutes);
         dc.setColor(bgColor, bgColor);
         dc.clear();
 		
