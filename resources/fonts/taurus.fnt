@@ -1,8 +1,9 @@
 info face="Taurus Mono Stencil" size=16 bold=1 italic=0 charset="" unicode=1 stretchH=100 smooth=0 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
 common lineHeight=16 base=16 scaleW=256 scaleH=256 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
 page id=0 file="taurus_0.png"
-chars count=27
-char id=32   x=29    y=13    width=3     height=1     xoffset=-1    yoffset=15    xadvance=13    page=0  chnl=15
+chars count=28
+char id=32   x=32    y=12    width=3     height=1     xoffset=-1    yoffset=15    xadvance=13    page=0  chnl=15
+char id=39   x=29    y=13    width=2     height=4     xoffset=5     yoffset=5     xadvance=13    page=0  chnl=15
 char id=65   x=32    y=0     width=11    height=11    xoffset=1     yoffset=5     xadvance=13    page=0  chnl=15
 char id=66   x=0     y=0     width=10    height=12    xoffset=1     yoffset=4     xadvance=13    page=0  chnl=15
 char id=67   x=104   y=0     width=10    height=11    xoffset=2     yoffset=5     xadvance=13    page=0  chnl=15

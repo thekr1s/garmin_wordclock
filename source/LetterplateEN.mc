@@ -6,8 +6,8 @@ class LetterplateEN {
 	const height = 11;
 	const marginPixels = 20;
 	const letters = [
-		"SITLISEHASN",
-		"ALMOSTBEENO",
+		"SIT'SEJUSTW",
+		"PASTALMOSTO",
 		"HALFQUARTER",
 		"ITWENTYFIVE",
 		"TENTPASTOSE",
@@ -25,10 +25,10 @@ class LetterplateEN {
 	const WIDTH_IDX = 3;
 	const klockWords_11x11 = [  
 		["it",  10, 1, 2],
-		["is",  10, 4, 2],
-		["has",  10, 7, 3],
-		["been",  9, 6, 4],
-		["almost",  9, 0, 6],
+		["is",  10, 3, 2],
+		["just",  10, 6, 4],
+		["past_min",  9, 0, 4],
+		["almost",  9, 4, 6],
 		["five_min",  7, 7, 4],
 		["ten_min",  6, 0, 3],
 		["a",  8, 1, 1],
@@ -148,20 +148,18 @@ class LetterplateEN {
 	    var clockTime = Sys.getClockTime();
 	
 		selectWord("it");
+		selectWord("is");
 		
 		// Round the minutes to a multiple og five
 		var t = minutes % 5;
 		if (t <= 2) {
 			minutes -= t;
-			if (t == 0) {
-				selectWord("is");
-			} else {
-				selectWord("has");
-				selectWord("been");
+			if (t != 0) {
+				selectWord("just");
+				selectWord("past_min");
 			}
 		} else {
 			minutes += 5 - t;
-			selectWord("is");
 			selectWord("almost");
 			if (minutes == 60){
 				minutes = 0;

@@ -47,7 +47,7 @@ class WatchFaceView extends Ui.WatchFace {
         
         if (demonstrationMode) {
 //	        Sys.println("demonstrationMode");
-			if (hours < 24) { hours += 1;}
+			if (hours < 12) { hours += 1;}
 			else {minutes += 1;}
 			
 			if (minutes == 60) {
