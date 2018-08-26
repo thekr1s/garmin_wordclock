@@ -15,8 +15,8 @@ class LetterplateEN {
 		"THREEIGHTEN",
 		"ISEVENINEXT",
 		"FOURFIVESIX",
-		"YTWELVEPBYZ",
-		"AGOCLOCKRMW"
+		"YTWELVERMWE",
+		"AGO'CLOCKRW"
 		];
 		
 	const NAME_IDX = 0;
@@ -53,7 +53,7 @@ class LetterplateEN {
 		["eleven",  5, 5, 6],
 		["twelve",  1, 1, 6],	
 		
-		["oclock",  0, 2, 6],	
+		["oclock",  0, 2, 7],	
 
 		["by",  1, 8, 2],
 		["rmw",  0, 8, 3],
