@@ -1,10 +1,8 @@
 using Toybox.System as Sys;
 
 
-class LetterplateEN {
-	const width = 11;
-	const height = 11;
-	const marginPixels = 20;
+class LanguagePlateEN {
+
 	const letters = [
 		"SIT'SEJUSTW",
 		"PASTALMOSTO",
@@ -18,11 +16,7 @@ class LetterplateEN {
 		"YTWELVERMWE",
 		"AGO'CLOCKRW"
 		];
-		
-	const NAME_IDX = 0;
-	const ROW_IDX = 1;
-	const COL_IDX = 2;
-	const WIDTH_IDX = 3;
+
 	const klockWords_11x11 = [  
 		["it",  10, 1, 2],
 		["is",  10, 3, 2],
@@ -75,7 +69,6 @@ class LetterplateEN {
 		"eleven",
 		"twelve"
 	];
-	var highlightedWords = [0, 1, 2, 6, 9, 10, -1];
 
 	function selectTimeWords(hours, minutes) {
 	    var clockTime = Sys.getClockTime();
@@ -109,7 +102,7 @@ class LetterplateEN {
 		}
 	
 		hours %= 12;
-		selectWord(hourNames[hours]);
+		timeWords.add(hourNames[hours]);
 	
 		switch (minutes) {
 		case 0:

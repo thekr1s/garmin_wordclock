@@ -10,6 +10,7 @@ class WatchFaceView extends Ui.WatchFace {
 	
     function initialize() { 
         WatchFace.initialize();
+        letterplate = new Letterplate();
         settingsChanged();
         
     }
@@ -80,17 +81,7 @@ class WatchFaceView extends Ui.WatchFace {
     }
 
 	function settingsChanged() {
-		var language = Application.getApp().getProperty("Language");
-		switch (language) {
-		case 0:
-			letterplate = new LetterplateNL();
-			break;
-		case 1:
-			letterplate = new LetterplateEN();
-			break;
-		default:
-			break;
-		}
+		
 		demonstrationMode = Application.getApp().getProperty("DemonstrationMode");
 		hours = 0;
 		minutes = 0;

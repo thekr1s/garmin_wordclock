@@ -1,7 +1,7 @@
 using Toybox.System as Sys;
 
 
-class LetterplateNL {
+class Letterplate {
 	const width = 11;
 	const height = 11;
 	const marginPixels = 20;
@@ -17,7 +17,7 @@ class LetterplateNL {
     var bgColor = null;
     var font = null;
     
-    var languagePlate = null
+    var languagePlate = null;
     
     function applySettings() {
     	var fontSelection = Application.getApp().getProperty("Font");
@@ -27,12 +27,11 @@ class LetterplateNL {
     	var language = Application.getApp().getProperty("Language");
 		switch (language) {
 		case 0:
-			languagePlate = new languagePlateNL();
+			languagePlate = new LanguagePlateNL();
 			break;
 		case 1:
-			languagePlate = new languagePlateEN();
-			break;
 		default:
+			languagePlate = new LanguagePlateEN();
 			break;
 		}
     	
@@ -60,9 +59,9 @@ class LetterplateNL {
 		var wordIdx = highlightedWords[highlightedWordIdx];
 		
 		while (wordIdx != -1) {			
-			if (klockWords_11x11[wordIdx][ROW_IDX] == row) { 
-				if (col >= klockWords_11x11[wordIdx][COL_IDX]) {
-					if (col < klockWords_11x11[wordIdx][COL_IDX] + klockWords_11x11[wordIdx][WIDTH_IDX]) {
+			if (languagePlate.klockWords_11x11[wordIdx][ROW_IDX] == row) { 
+				if (col >= languagePlate.klockWords_11x11[wordIdx][COL_IDX]) {
+					if (col < languagePlate.klockWords_11x11[wordIdx][COL_IDX] + languagePlate.klockWords_11x11[wordIdx][WIDTH_IDX]) {
 						return true;
 					}
 				}
@@ -100,14 +99,14 @@ class LetterplateNL {
 		var posY = marginPixels + charSpaceY / 2;
 
 		clearSelectedWords();
-		var timeWords = languagePlate.selectCurrentTimeWords(hours, minutes);
+		var timeWords = languagePlate.selectTimeWords(hours, minutes);
 		for (var i = 0; i < timeWords.size(); i++) {
 			selectWord(timeWords[i]);
 		}
         dc.setColor(bgColor, bgColor);
         dc.clear();
 		
-		for (var li = 0; li < languagePlate.height; li++) { // LineIndex
+		for (var li = 0; li < height; li++) { // LineIndex
 			var posX = marginPixels + charSpaceX / 2;
 			for (var ci = 0; ci < width; ci++) { // CharacterIndex
 				var s = languagePlate.letters[li].substring(ci,ci + 1);
