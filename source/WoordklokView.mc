@@ -4,28 +4,22 @@ using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.Application as App;
 
+
 class WatchFaceView extends Ui.WatchFace {
 	var customFont = null;
 	var letterplate = null;
 	
     function initialize() { 
         WatchFace.initialize();
+        letterplate = new Letterplate();
         settingsChanged();
         
     }
+    
 
     // Load your resources here
     function onLayout(dc) {
-//        customFont = Ui.loadResource(Rez.Fonts.taurusFont);
-//        setLayout(Rez.Layouts.WatchFace(dc));                
-//        var view = View.findDrawableById("HetIs");
-//        view.setFont(customFont);
-//        view = View.findDrawableById("Bijna");
-//        view.setFont(customFont);
-//        view = View.findDrawableById("Een");
-//        view.setFont(customFont);
-//        view = View.findDrawableById("Uur");
-//        view.setFont(customFont);
+
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -80,17 +74,7 @@ class WatchFaceView extends Ui.WatchFace {
     }
 
 	function settingsChanged() {
-		var language = Application.getApp().getProperty("Language");
-		switch (language) {
-		case 0:
-			letterplate = new LetterplateNL();
-			break;
-		case 1:
-			letterplate = new LetterplateEN();
-			break;
-		default:
-			break;
-		}
+		
 		demonstrationMode = Application.getApp().getProperty("DemonstrationMode");
 		hours = 0;
 		minutes = 0;
