@@ -110,7 +110,7 @@ class LanguagePlateEN {
 			break;
 	
 		case 30:
-			selectWord("half"); 
+			timeWords.add("half"); 
 			break;
 	
 		case 15:

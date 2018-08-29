@@ -4,6 +4,7 @@ using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.Application as App;
 
+
 class WatchFaceView extends Ui.WatchFace {
 	var customFont = null;
 	var letterplate = null;
@@ -14,19 +15,11 @@ class WatchFaceView extends Ui.WatchFace {
         settingsChanged();
         
     }
+    
 
     // Load your resources here
     function onLayout(dc) {
-//        customFont = Ui.loadResource(Rez.Fonts.taurusFont);
-//        setLayout(Rez.Layouts.WatchFace(dc));                
-//        var view = View.findDrawableById("HetIs");
-//        view.setFont(customFont);
-//        view = View.findDrawableById("Bijna");
-//        view.setFont(customFont);
-//        view = View.findDrawableById("Een");
-//        view.setFont(customFont);
-//        view = View.findDrawableById("Uur");
-//        view.setFont(customFont);
+
     }
 
     // Called when this View is brought to the foreground. Restore

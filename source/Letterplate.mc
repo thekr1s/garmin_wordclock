@@ -1,5 +1,5 @@
 using Toybox.System as Sys;
-
+using Toybox.Graphics as Gfx;
 
 class Letterplate {
 	const width = 11;
@@ -120,5 +120,45 @@ class Letterplate {
 			}
 			posY += charSpaceY;
 		}
+
+		drawBattery(dc, iaColor, fgColor);
 	}
+	
+	const batt_width_rect = 40;
+    const batt_height_rect = 10;
+    const batt_width_rect_small = 3;
+    const batt_height_rect_small = 5;
+    const batt_y = 10;
+	
+	function drawBattery(dc, primaryColor, lowBatteryColor)
+    {
+        var battery = Sys.getSystemStats().battery;
+        //set battery icon position
+        var batt_x = (dc.getWidth() / 2) - (batt_width_rect/2) - (batt_width_rect_small/2);
+        var batt_x_small = batt_x + batt_width_rect;
+        var batt_y_small = batt_y + ((batt_height_rect - batt_height_rect_small) / 2);
+        
+        if(battery <= 20.0)
+        {
+            primaryColor = lowBatteryColor;
+        }
+
+        dc.setColor(primaryColor, Gfx.COLOR_TRANSPARENT);
+        dc.drawRectangle(batt_x, batt_y, batt_width_rect, batt_height_rect);
+        dc.setColor(bgColor, Gfx.COLOR_TRANSPARENT);
+        dc.drawLine(batt_x_small-1, batt_y_small+1, batt_x_small-1, batt_y_small + batt_height_rect_small-1);
+
+        dc.setColor(primaryColor, Gfx.COLOR_TRANSPARENT);
+        dc.drawRectangle(batt_x_small, batt_y_small, batt_width_rect_small, batt_height_rect_small);
+        dc.setColor(bgColor, Gfx.COLOR_TRANSPARENT);
+        dc.drawLine(batt_x_small, batt_y_small+1, batt_x_small, batt_y_small + batt_height_rect_small-1);
+
+        dc.setColor(primaryColor, Gfx.COLOR_TRANSPARENT);
+        dc.fillRectangle(batt_x, batt_y, (batt_width_rect * battery / 100), batt_height_rect);
+        if(battery == 100.0)
+        {
+            dc.fillRectangle(batt_x_small, batt_y_small, batt_width_rect_small, batt_height_rect_small);
+        }
+    }
+	
 }
