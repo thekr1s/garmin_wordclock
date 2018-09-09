@@ -22,6 +22,7 @@
     
     <string id="FontStencil">Stencil</string>
     <string id="FontArialBlack">Arial Black</string>
-    <string id="FontStandard">Standard</string>
+    <string id="FontTiny">Standard</string>
+    <string id="FontXTiny">Small</string>
 
 </strings>

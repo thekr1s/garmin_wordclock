@@ -41,7 +41,10 @@ class Letterplate {
     		font = WatchUi.loadResource(Rez.Fonts.arialBlackFont);
     		break;
     	case 2:
-    		font = Graphics.FONT_SMALL;
+    		font = Graphics.FONT_SYSTEM_TINY;
+    		break;
+    	case 3:
+    		font = Graphics.FONT_SYSTEM_XTINY;
     		break;
     	default:
 	    	font = WatchUi.loadResource(Rez.Fonts.taurusFont);
@@ -98,14 +101,15 @@ class Letterplate {
 		var charSpaceY = (dc.getHeight() - 2 * marginPixels) / 11;
 		var posY = marginPixels + charSpaceY / 2;
 
+        dc.setColor(bgColor, bgColor);
+        dc.clear();
+        dc.setColor(iaColor, bgColor);
+		
 		clearSelectedWords();
 		var timeWords = languagePlate.selectTimeWords(hours, minutes);
 		for (var i = 0; i < timeWords.size(); i++) {
 			selectWord(timeWords[i]);
 		}
-        dc.setColor(bgColor, bgColor);
-        dc.clear();
-		
 		for (var li = 0; li < height; li++) { // LineIndex
 			var posX = marginPixels + charSpaceX / 2;
 			for (var ci = 0; ci < width; ci++) { // CharacterIndex
