@@ -1,4 +1,6 @@
 <fonts>
 <font id="taurusFont" filename="taurus.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+<font id="taurusXLFont" filename="taurusxl.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 <font id="arialBlackFont" filename="arialblack.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+<font id="arialBlackXLFont" filename="arialblackxl.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 </fonts>

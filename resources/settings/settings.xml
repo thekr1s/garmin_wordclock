@@ -42,9 +42,12 @@
     <setting propertyKey="Font" title="@Strings.FontTitle">
         <settingConfig type="list">
             <listEntry value="0">@Strings.FontStencil</listEntry>
-            <listEntry value="1">@Strings.FontArialBlack</listEntry>
-            <listEntry value="2">@Strings.FontTiny</listEntry>
-            <listEntry value="3">@Strings.FontXTiny</listEntry>
+            <listEntry value="1">@Strings.FontStencilXL</listEntry>
+            <listEntry value="2">@Strings.FontArialBlack</listEntry>
+            <listEntry value="3">@Strings.FontArialBlackXL</listEntry>
+            <listEntry value="4">@Strings.FontXTiny</listEntry>
+            <listEntry value="5">@Strings.FontTiny</listEntry>
+            <listEntry value="6">@Strings.FontSmall</listEntry>
         </settingConfig>
     </setting>
 

@@ -21,7 +21,10 @@
     <string id="ColorLtGray">Light Gray</string>
     
     <string id="FontStencil">Stencil</string>
+    <string id="FontStencilXL">Stencil XL</string>
     <string id="FontArialBlack">Arial Black</string>
+    <string id="FontArialBlackXL">Arial Black XL</string>
+    <string id="FontSmall">Large</string>
     <string id="FontTiny">Standard</string>
     <string id="FontXTiny">Small</string>
 

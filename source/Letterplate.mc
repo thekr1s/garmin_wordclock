@@ -37,17 +37,26 @@ class Letterplate {
     	
 //    	Sys.println(fontSelection);
     	switch (fontSelection) {
-    	case 1:
+    	case 0:
+	    	font = WatchUi.loadResource(Rez.Fonts.taurusFont);
+	    	break;
+    	case 2:
     		font = WatchUi.loadResource(Rez.Fonts.arialBlackFont);
     		break;
-    	case 2:
-    		font = Graphics.FONT_SYSTEM_TINY;
-    		break;
     	case 3:
+    		font = WatchUi.loadResource(Rez.Fonts.arialBlackXLFont);
+    		break;
+    	case 4:
     		font = Graphics.FONT_SYSTEM_XTINY;
     		break;
+    	case 5:
+    		font = Graphics.FONT_SYSTEM_TINY;
+    		break;
+    	case 6:
+    		font = Graphics.FONT_SYSTEM_SMALL;
+    		break;
     	default:
-	    	font = WatchUi.loadResource(Rez.Fonts.taurusFont);
+	    	font = WatchUi.loadResource(Rez.Fonts.taurusXLFont);
 	    	break;
 	    }
     	
@@ -115,9 +124,9 @@ class Letterplate {
 			for (var ci = 0; ci < width; ci++) { // CharacterIndex
 				var s = languagePlate.letters[li].substring(ci,ci + 1);
 				if (isHighlighted(li, ci)) {
-					dc.setColor(fgColor, bgColor);
+					dc.setColor(fgColor, Gfx.COLOR_TRANSPARENT);
 				} else {
-					dc.setColor(iaColor, bgColor);
+					dc.setColor(iaColor, Gfx.COLOR_TRANSPARENT);
 				}
 				dc.drawText(posX, posY, font, s, Graphics.TEXT_JUSTIFY_CENTER);
 				posX += charSpaceX;
