@@ -18,7 +18,7 @@ class Letterplate {
     var font = null;
     
     var languagePlate = null;
-    var showBattery = true;
+    var showBattery = 0;
     
     function applySettings() {
     	var fontSelection = Application.getApp().getProperty("Font");
@@ -64,7 +64,7 @@ class Letterplate {
     	fgColor = Application.getApp().getProperty("HighlightColor");
     	iaColor = Application.getApp().getProperty("InactiveColor");
     	bgColor = Application.getApp().getProperty("BackgroundColor");
-    	showBattery = Application.getApp().getProperty("BatteryStatus");
+    	showBattery = Application.getApp().getProperty("BatStatus");
     	
     }
     
@@ -137,9 +137,7 @@ class Letterplate {
 			posY += charSpaceY;
 		}
 
-		if (showBattery) {
 			drawBattery(dc, iaColor, fgColor);
-		}
 	}
 	
 	const batt_width_rect = 40;
@@ -156,10 +154,18 @@ class Letterplate {
         var batt_x_small = batt_x + batt_width_rect;
         var batt_y_small = batt_y + ((batt_height_rect - batt_height_rect_small) / 2);
         
-        if(battery <= 20.0)
+        if (showBattery == 2) {
+            // Don't show battery status
+        	return;
+        }
+        if(battery <= 30.0)
         {
             primaryColor = lowBatteryColor;
+        } else if (showBattery == 1) {
+        	// Don't show when > 30% 
+        	return;
         }
+        
 
         dc.setColor(primaryColor, Gfx.COLOR_TRANSPARENT);
         dc.drawRectangle(batt_x, batt_y, batt_width_rect, batt_height_rect);

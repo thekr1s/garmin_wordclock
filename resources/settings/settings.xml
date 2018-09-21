@@ -51,9 +51,14 @@
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.BatteryStatus" title="@Strings.BatteryStatusTitle">
-        <settingConfig type="boolean"/>
+    <setting propertyKey="@Properties.BatStatus" title="@Strings.BatStatusTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.BatAlways</listEntry>
+            <listEntry value="1">@Strings.BatLowOnly</listEntry>
+            <listEntry value="2">@Strings.BatOff</listEntry>
+        </settingConfig>
     </setting>
+    
     <setting propertyKey="@Properties.DemonstrationMode" title="@Strings.DemonstrationModeTitle">
         <settingConfig type="boolean"/>
     </setting>
