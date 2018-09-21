@@ -4,6 +4,7 @@
     <property id="InactiveColor" type="number">0x555555</property>
     <property id="BackgroundColor" type="number">0x0000FF</property>
     <property id="Font" type="number">0</property>
+    <property id="BatteryStatus" type="boolean">true</property>
     <property id="DemonstrationMode" type="boolean">false</property>
     
 </properties>

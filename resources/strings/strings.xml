@@ -7,6 +7,7 @@
     <string id="InactiveColorTitle">Inactive Letter Color</string>
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="FontTitle">Font</string>
+    <string id="BatteryStatusTitle">Show battery status</string>
     <string id="DemonstrationModeTitle">Demonstration Mode</string>
     
     <string id="LangEnglish">English</string>

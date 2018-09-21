@@ -18,6 +18,7 @@ class Letterplate {
     var font = null;
     
     var languagePlate = null;
+    var showBattery = true;
     
     function applySettings() {
     	var fontSelection = Application.getApp().getProperty("Font");
@@ -63,6 +64,8 @@ class Letterplate {
     	fgColor = Application.getApp().getProperty("HighlightColor");
     	iaColor = Application.getApp().getProperty("InactiveColor");
     	bgColor = Application.getApp().getProperty("BackgroundColor");
+    	showBattery = Application.getApp().getProperty("BatteryStatus");
+    	
     }
     
 	function isHighlighted(row, col) {
@@ -134,7 +137,9 @@ class Letterplate {
 			posY += charSpaceY;
 		}
 
-		drawBattery(dc, iaColor, fgColor);
+		if (showBattery) {
+			drawBattery(dc, iaColor, fgColor);
+		}
 	}
 	
 	const batt_width_rect = 40;
