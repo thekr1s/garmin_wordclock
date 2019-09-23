@@ -1,8 +1,0 @@
-<layout id="WatchFace">
-    <drawable class="Background" />
-    <label id="TimeLabel" x="100" y="100" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLUE" />
-    <label id="HetIs" x="30" y="20" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_DK_GRAY" text="HET IS"/>
-    <label id="Bijna" x="120" y="20" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" text="BIJNA"/>
-    <label id="Een" x="120" y="37" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" text="EEN"/>
-    <label id="Uur" x="120" y="180" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" text="UUR"/>
-</layout>
