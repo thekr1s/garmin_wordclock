@@ -56,6 +56,9 @@ class Letterplate {
     	case 6:
     		font = Graphics.FONT_SYSTEM_SMALL;
     		break;
+    	case 7:
+    		font = WatchUi.loadResource(Rez.Fonts.rutgersFont);
+    		break;
     	default:
 	    	font = WatchUi.loadResource(Rez.Fonts.taurusXLFont);
 	    	break;

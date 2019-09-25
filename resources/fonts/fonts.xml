@@ -3,4 +3,5 @@
 <font id="taurusXLFont" filename="taurusxl.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 <font id="arialBlackFont" filename="arialblack.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 <font id="arialBlackXLFont" filename="arialblackxl.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+<font id="rutgersFont" filename="rutgers.fnt" filter="' ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 </fonts>

@@ -48,6 +48,7 @@
             <listEntry value="4">@Strings.FontXTiny</listEntry>
             <listEntry value="5">@Strings.FontTiny</listEntry>
             <listEntry value="6">@Strings.FontSmall</listEntry>
+            <listEntry value="7">@Strings.FontRutgers</listEntry>
         </settingConfig>
     </setting>
 
