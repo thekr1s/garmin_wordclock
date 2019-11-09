@@ -57,6 +57,8 @@
             <listEntry value="0">@Strings.BatAlways</listEntry>
             <listEntry value="1">@Strings.BatLowOnly</listEntry>
             <listEntry value="2">@Strings.BatOff</listEntry>
+            <listEntry value="3">@Strings.BatClock</listEntry>
+            
         </settingConfig>
     </setting>
     

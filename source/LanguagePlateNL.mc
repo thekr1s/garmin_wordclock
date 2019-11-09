@@ -82,11 +82,10 @@ class LanguagePlateNL {
 	];
     
 	function selectTimeWords(hours, minutes) {
-	    var clockTime = Sys.getClockTime();
 		var timeWords = [];
 		timeWords.add("het");
 		timeWords.add("is");
-		
+	
 		// Round the minutes to a multiple og five
 		var t = minutes % 5;
 		if (t <= 2) {

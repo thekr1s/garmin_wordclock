@@ -19,7 +19,7 @@ class Letterplate {
     
     var languagePlate = null;
     var showBattery = 0;
-    
+
     function applySettings() {
     	var fontSelection = Application.getApp().getProperty("Font");
     	if (fontSelection == null) {
@@ -141,6 +141,7 @@ class Letterplate {
 		}
 
 			drawBattery(dc, iaColor, fgColor);
+			drawDigitalClock(dc, hours, minutes);
 	}
 	
 	const batt_width_rect = 40;
@@ -157,7 +158,7 @@ class Letterplate {
         var batt_x_small = batt_x + batt_width_rect;
         var batt_y_small = batt_y + ((batt_height_rect - batt_height_rect_small) / 2);
         
-        if (showBattery == 2) {
+        if (showBattery >= 2) {
             // Don't show battery status
         	return;
         }
@@ -186,6 +187,21 @@ class Letterplate {
         {
             dc.fillRectangle(batt_x_small, batt_y_small, batt_width_rect_small, batt_height_rect_small);
         }
+    }
+    
+    function drawDigitalClock(dc, hours, minutes) 
+    {
+        var posX = dc.getWidth() / 2; 
+        var posY = 0;
+		var timeStr = Lang.format("$1$:$2$", [hours.format("%02d"), minutes.format("%02d")]);
+		
+        if (showBattery != 3) {
+            // Don't show battery status
+        	return;
+        }
+
+		dc.setColor(fgColor, Gfx.COLOR_TRANSPARENT);
+    	dc.drawText(posX, posY, Graphics.FONT_LARGE, timeStr, Graphics.TEXT_JUSTIFY_CENTER);
     }
 	
 }

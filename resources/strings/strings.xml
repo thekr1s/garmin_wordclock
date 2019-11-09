@@ -7,7 +7,7 @@
     <string id="InactiveColorTitle">Inactive Letter Color</string>
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="FontTitle">Font</string>
-    <string id="BatStatusTitle">Show battery status</string>
+    <string id="BatStatusTitle">Top area display</string>
     <string id="DemonstrationModeTitle">Demonstration Mode</string>
     
     <string id="LangEnglish">English</string>
@@ -30,8 +30,9 @@
     <string id="FontTiny">Standard</string>
     <string id="FontXTiny">Small</string>
 
-    <string id="BatAlways">Show always</string>
-    <string id="BatLowOnly">Show when below 30 percent</string>
+    <string id="BatAlways">Battery status</string>
+    <string id="BatLowOnly">Battery status when below 30 percent</string>
     <string id="BatOff">Don't show</string>
+    <string id="BatClock">Digital clock</string>
 
 </strings>
