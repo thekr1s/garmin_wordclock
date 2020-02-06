@@ -4,6 +4,7 @@
         <settingConfig type="list">
             <listEntry value="0">@Strings.LangDutch</listEntry>
             <listEntry value="1">@Strings.LangEnglish</listEntry>
+            <listEntry value="2">@Strings.LangSpanish</listEntry>
         </settingConfig>
     </setting>
     <setting propertyKey="@Properties.HighlightColor" title="@Strings.HighlightColorTitle">
