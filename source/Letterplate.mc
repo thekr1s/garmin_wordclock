@@ -30,6 +30,9 @@ class Letterplate {
 		case 0:
 			languagePlate = new LanguagePlateNL();
 			break;
+		case 2:
+			languagePlate = new LanguagePlateSP();
+			break;
 		case 1:
 		default:
 			languagePlate = new LanguagePlateEN();
