@@ -84,21 +84,15 @@ class LanguagePlateSP {
 			}
 		}
 
+		if (minutes <= 30) {
 		hours %= 12;
-		if ((hours == 1 && minutes <= 30) or (hours == 12 && minutes > 30)) {
+		if (hours == 1) {
 			timeWords.add("es");
-			if (t > 2) {
-			}
 			timeWords.add("la");
 		} else {
 		timeWords.add("son");
-			if (t > 2) {
-			}
 		timeWords.add("las");
 		}
-
-		if (minutes <= 30) {
-		hours %= 12;
 		timeWords.add(hourNames[hours]);
 		switch (minutes) {
 		
@@ -141,6 +135,13 @@ class LanguagePlateSP {
 			hours += 1;
 	
 		hours %= 12;
+		if (hours == 1) {
+			timeWords.add("es");
+			timeWords.add("la");
+		} else {
+		timeWords.add("son");
+		timeWords.add("las");
+		}
 		timeWords.add(hourNames[hours]);
 	
 		switch (minutes) {
